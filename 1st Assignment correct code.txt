@@ -1,0 +1,24 @@
+print("Input two numbers and a mathematical operation (+, -, *, or /):")
+
+# Get inputs and convert numbers
+try:
+    First_Number = float(input("Enter the first number: "))
+    Second_Number = float(input("Enter the second number: "))
+    Mathematical_Operation = input("Enter the operation (+, -, *, /): ")
+
+    if Mathematical_Operation == "+":
+        print(First_Number + Second_Number)
+    elif Mathematical_Operation == "-":
+        print(First_Number - Second_Number)
+    elif Mathematical_Operation == "*":
+        print(First_Number * Second_Number)
+    elif Mathematical_Operation == "/":
+        if Second_Number != 0:
+            print(First_Number / Second_Number)
+        else:
+            print("Error: Cannot divide by zero.")
+    else:
+        print("Invalid calculation: Unknown operation.")
+
+except ValueError:
+    print("Error: Please enter valid numbers.")
