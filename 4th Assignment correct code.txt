@@ -1,0 +1,20 @@
+# Step 1: Create and write to input.txt (only needed once)
+with open("input.txt", "w") as f:
+    f.write("This program reads a text file,\nAnd writes a modified version to a new file.")
+
+# Step 2: Read from input.txt
+try:
+    with open("input.txt", "r") as infile:
+        content = infile.read()
+        modified_content = content.upper()  # Convert to uppercase as the modification
+
+    # Step 3: Write to output.txt
+    with open("output.txt", "w") as outfile:
+        outfile.write(modified_content)
+
+    print("Modified content has been written to 'output.txt'.")
+
+except FileNotFoundError:
+    print("Error: 'input.txt' does not exist.")
+except IOError:
+    print("Error: Could not read or write file.")
