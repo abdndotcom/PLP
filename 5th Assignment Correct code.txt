@@ -1,0 +1,52 @@
+# Parent class
+class Gadget:
+    def __init__(self, brand):
+        self.brand = brand
+
+    def info(self):
+        print(f"This is a device from {self.brand}.")
+
+# Child class inheriting from Gadget
+class Samsung(Gadget):
+    # Class attribute
+    Tab = "Galaxy"
+
+    # Constructor with instance attributes
+    def __init__(self, Tab, Year):
+        super().__init__("Samsung")  # Calls Gadget's constructor
+        self.Tab = Tab              # Overrides the class attribute
+        self.Year = Year
+
+    # Instance method
+    def call(self):
+        print(f"Calling from {self.Tab}, made in {self.Year}.")
+
+# Object creation
+x = Samsung("Galaxy Tab A", 2020)
+x.info()
+x.call()
+
+# Part 2: Polymorphism with move() Method
+class Animal:
+    def move(self):
+        print("This animal moves in some way.")
+
+class Dog(Animal):
+    def move(self):
+        print("Running [Dog]")
+
+class Fish(Animal):
+    def move(self):
+        print("Swimming [Fish]")
+
+class Bird(Animal):
+    def move(self):
+        print("Flying [Bird]")
+
+dog = Dog()
+fish = Fish()
+bird = Bird()
+
+dog.move()
+fish.move()
+bird.move()
